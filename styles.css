@@ -1,0 +1,29 @@
+.title{
+    font-weight: 800;
+}
+.home-container{
+    position: absolute;
+    width: 90vw;
+    top: 8vh;
+    margin-left: 4vw;
+    text-align: center;
+}
+
+body{
+    font-family: 'Droid Sans'
+}
+
+.options{
+    padding-top: 30px;
+}
+.button{
+    padding-top: 20px;
+}
+.button a{
+    color: red;
+    text-decoration: none;
+}
+
+.button a:hover{
+    color: black;
+}
