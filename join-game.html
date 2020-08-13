@@ -3,15 +3,20 @@
     <head>
         <meta charset="utf-8">
         <title>Benevolent Oranges</title>
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link rel="stylesheet" href="styles.css">
     </head>
 <body>
-    <div class=home-container>
+    <div class=join-container>
         Please enter your name
-        <div class="button">
-            <a href=game>Enter Game
-            </a>
-        </div>
+        <form action="game.js">
+            <div class="submit-bar">
+                <input type="text" id="userName" name="userName">
+            </div>
+            <div class="button">
+                <input type="submit" value="Enter Game">
+            </div>
+        </form>
     </div>
     
 </body>
