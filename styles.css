@@ -13,7 +13,7 @@ body, input {
     font-stretch: semi-expanded;
 }
 
-.home-container {
+.container {
     position: absolute;
     width: 90vw;
     margin-left: 5vw;
@@ -22,13 +22,19 @@ body, input {
     padding-bottom: 10vh;
 }
 
-.join-container {
+.joinContainer {
     position: absolute;
     width: 40vw;
     margin-left: 30vw;
-    padding-top: 30vh;
+    top: 200px;
     text-align: center;
+    transition: transform 2s;
 }
+
+.joinContainerMove{
+    transform: translateY(-120px);
+}
+
 
 header>h1{
     font-size: 35px;
@@ -42,8 +48,9 @@ h2{
 }
 
 .options {
-    margin-top: 50px;
+    margin-top: 40px;
 }
+
 
 
 
@@ -61,6 +68,7 @@ input[type=text]{
     border: 2px solid rgba(0, 0, 0, 0.533);
     border-radius: 5px;
     margin: 15px;
+    margin-bottom: 30px;
     color: rgba(0, 0, 0, 0.9);
     text-align: center;
 }
@@ -72,25 +80,43 @@ input[type=text]:focus, input[type=text]:hover{
     color: rgba(0, 0, 0, 0.9);
 }
 
+
+
 /**
 *buttons
 */ 
 
 .button a, .button, input{
-    padding-top: 20px;
-    padding-bottom: 5px;
+    margin-top: 15px;
+    padding: 5px;
     font-size: 25px;
     font-weight: 350;
 
     color:tomato;
     text-decoration: none;
     transition: color 0.5s;
+    transition: text-shadow 20ms;
 }
 
 .button a:hover, button:hover, input:hover {
     color:rgba(170, 0, 170, 0.959);
+    /*text-shadow: 0 0 8px orangered;*/
 }
 
+input:focus{
+    outline: none;
+    animation: click 20ms;
+    transform: text-shadow(0 2px 2px rgba(143, 137, 143, 0.527));
+}
+
+@keyframes click{
+    0%, 100%{
+        transform:translate(0,0);
+    }
+    50%{
+        transform:translate(0,5px);
+    }
+}
 /**
 * linked button when starting new game or resetting
 * input[type = button, submit, reset] 
@@ -115,13 +141,13 @@ input {
     width: 500px;
     animation:
         nudge 7s ease-in-out infinite alternate;
-    transition: animation-duration 5s;
+    /*transition: animation-duration 3s; */
     animation-direction: alternate;
 }
 
 .orangeImg:hover{
     animation-timing-function: ease-in-out;
-    animation-duration: 4s;
+    animation-duration: 2.5s;
 }
 
 @keyframes nudge {
@@ -129,11 +155,72 @@ input {
       transform: translate(0, 0);
     }
     
-    20% {
+    25% {
       transform: translate(0, -80px);
     }
     
-    60% {
+    72% {
       transform: translate(0, -120px);
     }
   }
+
+/*
+box where players submit round submission
+*/
+  #responseBar{
+    position: relative;
+    top: 90px;
+    width: 20vw;
+    height: 13vh;
+    font-size: 30px;
+    padding: 10px 15px;
+    border: 3px solid rgba(255, 153, 0, 0.404);
+    border-radius: 6px;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    outline: none;
+    margin: 65px;
+    /*box-shadow: 0 0 10px rgba(170, 0, 170, 0.29);*/
+    transition: border-color .5s;
+}
+
+#responseBar:hover{
+    /*box-shadow: 0 0 20px rgba(105, 64, 105, 0.759);*/
+    border-color: rgba(255, 153, 0, 0.804);
+    outline: none;
+}
+
+/**
+solid button
+*/ 
+#submitAns, #StartGameButton{
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    font-size: 22px;
+    background-color: rgba(255, 99, 71, 0.873);
+    border-radius: 8px;
+    color: white;
+    transition: background-color .5s;
+    margin: 30px;
+}
+
+#submitAns:hover, #StartGameButton:hover{
+    background-color: rgb(255, 94, 30);
+}
+
+
+.playersContainer{
+    text-align: center;
+    margin-top: 40vh;
+    width: 40vw;
+    margin-left: 30vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+.fadeIn {
+    visibility: visible;
+    opacity: 1;
+}

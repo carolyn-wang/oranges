@@ -3,21 +3,40 @@
     <head>
         <meta charset="utf-8">
         <title>Benevolent Oranges</title>
-        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link rel="stylesheet" href="styles.css">
     </head>
 <body>
-    <div class=join-container>
+    <div class=joinContainer>
         Please enter your name
         <form action="game.js">
-            <div class="submit-bar">
-                <input type="text" id="userN" name="userN">
+            <div class="submitBar"> <!-- bar for player to enter name-->
+                <input type="text" id="nameIn" name="nameIn" required>
             </div>
-            <div class="button">
+            <div class="button" id="enterButton"> <!-- button to create new game-->
                 <a href=make-game-container>Create New Game</a>
             </div>
         </form>
     </div>
+
+    <div class="playersContainer">
+            <h1> Players </h1>
+            *display players here*
+        
+        <form action="index.html" target="_self" method = "POST">
     
+    <!-- Click down bar to choose number of rounds
+            <input list= "numRounds" placeholder= "# of Rounds">
+            <datalist id="numRounds">
+                <option value="1">
+                <option value="3">
+                <option value="5">
+                <option value="∞">
+            </datalist>
+        -->
+    
+
+    </div>
+    <script src= "scripts/app.js" charset="utf-8"></script>
 </body>
 </html>
