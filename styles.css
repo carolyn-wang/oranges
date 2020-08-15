@@ -32,7 +32,8 @@ body, input {
 }
 
 .joinContainerMove{
-    transform: translateY(-120px);
+    transform: translateY(-150px);
+    position: relative;
 }
 
 
@@ -212,7 +213,7 @@ solid button
 
 .playersContainer{
     text-align: center;
-    margin-top: 40vh;
+    margin-top: 2vh;
     width: 40vw;
     margin-left: 30vw;
     visibility: hidden;

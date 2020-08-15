@@ -9,19 +9,27 @@
 <body>
 
     <div class=joinContainer>
-        Please enter your name 
-        <form action="join-game.html" target="_self" method="POST">
+        <div class="instruction">
+            Please enter your name 
+        </div>
+        
+        <form method="post" onsubmit = "showPlayers(); return false" action="game.js" >
             <div class="submitBar">
-                <input type="text" id="nameIn" class="nameIn" required >
+                <input type="text" name="nameIn" class="nameIn" required >
             </div>
-        Game code
+        Join code
             <div class="submitBar">
-                <input type="text" id="codeIn" class="codeIn" display= "_ _ _ _" required >
+                <input type="text" name="codeIn" class="codeIn" placeholder="4-digit code" required maxlength="4">
             </div>
             <div class="button" id="enterButton">
                 <input type="submit" value="Enter Game">
             </div>
+            
         </form>
+
+
+        
+
 
         <script>
             /*
@@ -37,13 +45,17 @@
 
     <div class="playersContainer">
         <h1> Players </h1>
-        <div>*display players here*</div>
+        <div>
+            players here
+            <!-- <?php echo $_POST["nameIn"]; ?><br>
+            <?php echo $_POST["codeIn"]; ?> -->
+        </div>
         <form action="game.html" method="POST">
             <input type ="submit" id="StartGameButton" value="Start Game">
         </form>
     </form>
     </div>
-
+    
     <script src= "scripts/app.js" charset="utf-8"></script>
 </body>
 </html>
